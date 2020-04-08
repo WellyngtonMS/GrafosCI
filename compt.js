@@ -169,5 +169,5 @@ function changecompt() {
 
         nodesSet.update(node);
     });
-    document.getElementById("curso").innerHTML = "Engenharia de Computação";
+    document.getElementById("curso").innerHTML = "Engenharia da Computação";
 }

@@ -69,7 +69,7 @@ function readcookies(){
     network = new vis.Network(container, data, options);
     curso = localStorage.getItem("curso");
     document.getElementById("curso").innerHTML=curso;
-    if(curso=="Engenharia de Computação"){
+    if(curso=="Engenharia da Computação"){
         mycall=true
         document.getElementById("compt").onclick();
         mycall=false

@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Graphs &mdash; Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script type="text/javascript" src="js/vis.min.js"></script>    
+  <link href="css/vis.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="fonts/flaticon-covid/font/flaticon.css">
+
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style type="text/css">
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            border: 1px solid lightgray;
+        }
+    </style>
+</head>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    
+    <header class="site-navbar light js-sticky-header site-navbar-target" role="banner">
+
+      <div class="container">
+        <div class="row align-items-center">
+
+          <div class="col-6 col-xl-2">
+            <div class="mb-0 site-logo"><a href="index.html" class="mb-0">Graphs<span class="text-primary">.</span> </a></div>
+          </div>
+
+          <div class="col-12 col-md-10 d-none d-xl-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+
+              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li class="active"><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle float-right"><span class="icon-menu h3 text-black"></span></a></div>
+
+        </div>
+      </div>
+
+    </header>
+
+    
+    <div class="hero-v1" id="home">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mr-auto text-center text-lg-left">
+            <span class="d-block subheading">Dependencies graphs</span>
+            <h1 class="heading mb-3">Simple. Practial.</h1>
+            <p class="mb-5">Disciplinary dependencies tool.</p>
+            <p class="mb-4"><a href="#graphs" class="btn btn-primary">GRAPHS</a></p>
+          </div>
+          <div class="col-lg-6">
+            <figure class="illustration">
+              <img src="images/percentages.svg" alt="Image" class="img-fluid">
+            </figure>
+          </div>
+          <div class="col-lg-6"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section" id="graphs">
+   	  <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-7 mx-auto text-center">
+            <span class="subheading">Tool application</span>
+            <h2 class="mb-4 section-heading">Graphs</h2>
+            <h2 id="curso"></h2>
+    	  </div>
+    	</div>
+              	<center><p>
+                  <input type="submit" class="btn btn-primary" value="Computer Engineering" id="compt" onclick="naoapagar=false;changecompt();toggleButton(this);">
+                  <input type="submit" class="btn btn-primary" value="Computer Science" id="cien" onclick="naoapagar=false;changecien();toggleButton(this);">               
+                  <input type="submit" class="btn btn-primary" value="Computational Mathematics" id="mat" onclick="naoapagar=false;changemat();toggleButton(this);">               
+                  <input type="submit" class="btn btn-primary" value="Data Science and Artificial Intelligence" id= "dados" onclick="naoapagar=false;changedados();toggleButton(this);">
+                </p></center>
+             
+                <div class="infoBorder center">
+                    <div id="mynetwork"></div>
+                    <pre id="eventSpan" style="display:none"></pre>   
+            	</div>
+          </div>
+      </div>
+	</div>
+
+    <div class="site-section" id="about">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-7 mx-auto text-center">
+            <span class="subheading">What do you need to know</span>
+            <h2 class="mb-4 section-heading">About The Tool</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 ">
+            <div class="row mt-5 pt-5">
+              <div class="col-lg-6 do ">
+                <h3>Subtitle</h3>
+                <ul class="list-unstyled check">
+                  <li>Each column refers to a period</li>
+                  <li>Gray - Matter cannot be done</li>
+                  <li>Blue - Matter can be done</li>
+                  <li>Green - Matter completed</li>
+                </ul>
+              </div>
+              <div class="col-lg-6 dont ">
+                <h3>Tips</h3>
+                <ul>
+                  <li>It is possible to select courses even without having the necessary prerequisites</li>
+                  <li>It is possible to reorder the subjects in the period axis, by dragging</li>
+                  <li>When you place your mouse over a course, you can see the name and code</li>
+                  <li>When clicking and dragging a discipline, the edges are highlighted, showing their respective prerequisites</li>
+                  <li>If any node goes missing, refresh the page</li>
+                  <li>Use the scroll button for a better view in the graph area</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <img src="images/faq.svg" alt="Image" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section" id="contact">
+      <div class="hero-v2">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-lg-6 text-center mx-auto">
+              <span class="d-block subheading">Contact</span>
+              <h1 class="heading mb-3">Get In Touch</h1>
+              <p class="mb-5">Send us a notification in case of problems with the tool!</p>
+            </div>          
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <form action="#">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="fname">First name</label>
+                    <input type="text" id="fname" class="form-control">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="lname">Last name</label>
+                    <input type="text" id="lname" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" class="form-control" cols="30" rows="10"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <input type="submit" class="btn btn-primary" value="Send Message">
+                </div>
+              </div>
+
+            </form>
+          </div>
+
+          <div class="col-lg-5 ml-auto">
+            <h3 class="mb-3 side-title">Quick info</h3>
+            <div class="quick-contact">
+
+              <div class="d-flex">
+                <span class="icon-room"></span>
+                <address>
+                  João Pessoa - Paraíba, Brasil
+                </address>
+              </div>
+              <div class="d-flex">
+                <span class="icon-github"></span>
+                <a href="https://github.com/WellyngtonMS">Wellyngton Matheus</a>
+              </div>
+              <div class="d-flex">
+                <span class="icon-instagram"></span>
+                <a href="https://instagram.com/wellyngton_ms">Wellyngton Matheus</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div> <!-- .site-wrap -->
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.countdown.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/isotope.pkgd.min.js"></script>
+<script src="js/main.js"></script>
+  <script type="text/javascript" src="js/compt.js"></script>
+  <script type="text/javascript" src="js/cookie.js"></script>  
+  <script type="text/javascript" src="js/graph.js"></script>
+  <script type="text/javascript" src="js/cien.js"></script>
+  <script type="text/javascript" src="js/mat.js"></script>
+  <script type="text/javascript" src="js/dados.js"></script>
+  <script type="text/javascript">
+    var blue = {
+        border: 'rgba(43,124,233,1)',
+        background: 'rgba(151,194,252,1)',
+    }
+    var green = {
+        border: 'rgba(43,233,124,1)',
+        background: 'rgba(151,252,194,1)',
+    }
+    var red = {
+        border: 'rgba(207, 0, 15, 1)',
+        background:'rgba(207, 0, 15, 1)',
+    }
+    var taken = {};
+    var available = {};
+
+    var container = document.getElementById('mynetwork');
+    
+    var data = {
+        nodes: nodesSet,
+        edges: edgesSet,
+    }
+    var options = {
+        nodes: {
+            color : red,
+            shape: 'dot',
+            font: {
+              color: "#ffffff",
+            },
+        },
+        edges: {
+            arrows: 'to',
+            smooth: {
+                type: 'horizontal',
+                forceDirection: 'horizontal',
+                roundness: 0.4,
+            },
+            width: 0.4,
+        },
+        layout: {
+            hierarchical:{
+                direction: 'LR',
+                levelSeparation: 220,
+                edgeMinimization:true,
+                blockShifting:true,
+                sortMethod:'hubsize',
+            }
+        },
+        physics: {
+            enabled: false,
+        },
+        interaction: {
+            selectable: false,
+            hover: true,
+            hoverConnectedEdges: true,
+        },
+    };
+
+    resetcookies();
+    var radios = document.querySelectorAll('.radio');
+	function toggleButton(el) {
+  		for (var i = 0, l = radios.length; i < l; i++) {
+    		var fn = radios[i] == el ? 'add' : 'remove';
+    		radios[i].classList[fn]('focus');
+  		}
+	}
+
+    var network = new vis.Network(container, data, options);
+    readcookies();
+    
+    network.stabilize();
+
+    nodesSet.forEach(function (node) {
+        var edges = edgesSet.get({returnType: 'Object'});
+        var connEdges = network.getConnectedEdges(node.id);
+
+        for (j = 0; j < connEdges.length; j++) {
+            if (edges[connEdges[j]].to == node.id && taken[edges[connEdges[j]].from] != true) {
+                available[node.id] = false;
+                node.color = red;
+                nodesSet.update(node);
+                return;
+            }
+        }
+        available[node.id] = true;
+        if(taken[node.id]==true)
+            node.color = green;
+        else
+            node.color = blue;
+        nodesSet.update(node);
+    });
+    
+    network.on("click", function (params) {
+        var nodes = nodesSet.get({returnType: 'Object'});
+        var edges = edgesSet.get({returnType: 'Object'});
+
+        var selectedNode = network.getNodeAt(params.pointer.DOM);
+        if (selectedNode == undefined)
+            return;
+
+        var i,j;
+
+        if (taken[selectedNode] == true) {
+            taken[selectedNode] = false;
+            if (available[selectedNode] == true)
+                nodes[selectedNode].color = blue;
+            else
+                nodes[selectedNode].color = red;
+        } else {
+            taken[selectedNode] = true;
+            nodes[selectedNode].color = green;
+        }
+
+        var connectedNodes = network.getConnectedNodes(selectedNode);
+
+        loop1: for (i = 0; i < connectedNodes.length; i++) {
+            var node = connectedNodes[i];
+            if (taken[node] == true) continue;
+            var connEdges = network.getConnectedEdges(node);
+
+            for (j = 0; j < connEdges.length; j++) {
+                if (edges[connEdges[j]].to == node
+                && taken[edges[connEdges[j]].from] != true) {
+                    available[node] = false;
+                    nodes[node].color = red;
+                    continue loop1;
+                }
+            }
+
+            available[node] = true;
+            nodes[node].color = blue;
+        }
+
+        var updateArray = [];
+        for (nodeId in nodes) {
+            if (nodes.hasOwnProperty(nodeId)) {
+                updateArray.push(nodes[nodeId]);
+            }
+        }
+        nodesSet.update(updateArray);
+        if(window.fakeclick!=true){
+            createCookie();
+        }
+    });
+    network.on("doubleClick", function (params) {
+        params.event = "[original event]";
+        document.getElementById('eventSpan').innerHTML = '<h2>doubleClick event:</h2>' + JSON.stringify(params, null, 4);
+    });
+    network.on("oncontext", function (params) {
+        params.event = "[original event]";
+        document.getElementById('eventSpan').innerHTML = '<h2>oncontext (right click) event:</h2>' + JSON.stringify(params, null, 4);
+    });
+    network.on("dragStart", function (params) {
+        params.event = "[original event]";
+        document.getElementById('eventSpan').innerHTML = '<h2>dragStart event:</h2>' + JSON.stringify(params, null, 4);
+    });
+    network.on("dragging", function (params) {
+        params.event = "[original event]";
+        document.getElementById('eventSpan').innerHTML = '<h2>dragging event:</h2>' + JSON.stringify(params, null, 4);
+    });
+    network.on("dragEnd", function (params) {
+        network.unselectAll();
+    });
+    network.on("zoom", function (params) {
+        document.getElementById('eventSpan').innerHTML = '<h2>zoom event:</h2>' + JSON.stringify(params, null, 4);
+    });
+    network.on("select", function (params) {
+        console.log('select Event:', params);
+    });
+    network.on("selectNode", function (params) {
+        
+    });
+    network.on("selectEdge", function (params) {
+        console.log('selectEdge Event:', params);
+    });
+    network.on("deselectNode", function (params) {
+        console.log('deselectNode Event:', params);
+    });
+    network.on("deselectEdge", function (params) {
+        console.log('deselectEdge Event:', params);
+    });
+    network.on("hoverNode", function (params) {
+        network.canvas.body.container.style.cursor = 'pointer';
+        console.log('hoverNode Event:', params);
+    });
+    network.on("hoverEdge", function (params) {
+        console.log('hoverEdge Event:', params);
+    });
+    network.on("blurNode", function (params) {
+        network.canvas.body.container.style.cursor = 'default';
+        console.log('blurNode Event:', params);
+    });
+    network.on("blurEdge", function (params) {
+        console.log('blurEdge Event:', params);
+    });
+
+</script>
+
+
+</body>
+</html>

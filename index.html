@@ -20,6 +20,9 @@
             <button class="button radio" id="cien" onclick="naoapagar=false;changecien();toggleButton(this);">Ciência da Computação</button> 
             <button class="button radio" id="mat" onclick="naoapagar=false;changemat();toggleButton(this);">Matemática Computacional</button> 
             <button class="button radio" id="dados" onclick="naoapagar=false;changedados();toggleButton(this);">Ciência de Dados e Inteligência Artificial</button> 
+            <a href="#modal">
+                <button class="button radio" onclick="naoapagar=false;toggleButton(this);">Legenda</button>
+            </a>
         </div>
         <div class="row">
             <div class="rightcolumn">
@@ -32,26 +35,32 @@
                   </div>
               </div>
             </div>
-            <div class="leftcolumn">
+        </div>
+        
+        <div class="modal" id="modal" tabindex="-1">
+            <a href="#" class="modal__overlay" aria-label="Fechar"></a>
+                <div class="modal__content">
+                    <a href="" class="modal__close" aria-label="Fechar">X</a>
                 <div class="card">
-                    <h3>Legenda:</h3>
-                    <ul>
-                    <li>Cada coluna é referente a um período.</li>
-                    <li>Cinza: Matéria não pode ser feita.</li>
-                    <li>Verde: Matéria pode ser feita.</li>
-                    <li>Azul: Matéria concluída.</li>
-                    
-                    </ul>
-                    <h3>Dicas:</h3>
-                    <ul>
-                    <li>Recomendado o uso através do computador.</li>
-                    <li>É possível marcar disciplinas mesmo sem ter os pré-requisitos necessários.</li>
-                    <li>É possível reordenar as disciplinas no "eixo" do período arrastando.</li>
-                    <li>Ao colocar o mouse em cima de uma disciplina, é possivel ver o nome e código.</li>
-                    <li>Ao clicar e/ou arrastar uma disciplina, as arestas que incidem ascendem e são destacadas, mostram seus respectivos pré-requisitos.</li>
-                    <li>Em caso de sumir algum nó, atualize a página.</li>
-                    </ul>
-                </div>
+                <h3>Legenda:</h3>
+                <ul>
+                <li>Cada coluna é referente a um período.</li>
+                <li>Vermelho: Matéria não pode ser feita.</li>
+                <li>Azul: Matéria pode ser feita.</li>
+                <li>Verde: Matéria concluída.</li>
+                
+                </ul>
+                <h3>Dicas:</h3>
+                <ul>
+                <li>Use o botão de rolagem para uma melhor visualização na área dos grafos.</li>   
+                <li>É Recomendado o uso através do computador.</li>
+                <li>É possível marcar disciplinas mesmo sem ter os pré-requisitos necessários.</li>
+                <li>É possível reordenar as disciplinas no "eixo" do período, arrastando.</li>
+                <li>Ao colocar o mouse em cima de uma disciplina, é possivel ver o nome e código.</li>
+                <li>Ao clicar e/ou arrastar uma disciplina, as arestas que incidem ascendem e são destacadas, mostram seus respectivos pré-requisitos.</li>
+                <li>Se sumir algum nó, atualize a página.</li>
+                </ul>
+            </div>
             </div>
         </div>
 

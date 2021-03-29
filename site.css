@@ -124,8 +124,6 @@ h3 {
 ul {
   color: white;
   font-family: Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-align: justify;
-  margin: 0.8em;
   padding-inline-start: 20px;
 }
 
@@ -163,14 +161,4 @@ ul {
   background-color: #35457e;
   padding: 2rem;
   border-radius: 7px;
-  }
-   
-  .modal__close {
-  color: initial;
-  text-decoration: none;
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 0 0.5rem;
-  display: inline-block;
   }

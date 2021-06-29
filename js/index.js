@@ -1,7 +1,3 @@
-var gray = {
-    border: 'rgba(137,140,139,0.75)',
-    background: 'rgba(197,209,204,0.75)',
-}
 var blue = {
     border: 'rgba(43,124,233,1)',
     background: 'rgba(151,194,252,1)',
@@ -10,7 +6,10 @@ var green = {
     border: 'rgba(43,233,124,1)',
     background: 'rgba(151,252,194,1)',
 }
-
+var red = {
+    border: 'rgba(204, 0, 0, 1)',
+    background:'rgba(204, 0, 0, 1)',
+}
 var taken = {};
 var available = {};
 
@@ -22,8 +21,11 @@ var data = {
 }
 var options = {
     nodes: {
-        color : gray,
-        shape: 'box',
+        color : red,
+        shape: 'dot',
+        font: {
+          color: "#ffffff",
+        },
     },
     edges: {
         arrows: 'to',
@@ -31,7 +33,8 @@ var options = {
             type: 'horizontal',
             forceDirection: 'horizontal',
             roundness: 0.4,
-        }
+        },
+        width: 0.4,
     },
     layout: {
         hierarchical:{
@@ -47,7 +50,8 @@ var options = {
     },
     interaction: {
         selectable: false,
-    hover: true,
+        hover: true,
+        hoverConnectedEdges: true,
     },
 };
 
@@ -72,16 +76,16 @@ nodesSet.forEach(function (node) {
     for (j = 0; j < connEdges.length; j++) {
         if (edges[connEdges[j]].to == node.id && taken[edges[connEdges[j]].from] != true) {
             available[node.id] = false;
-            node.color = gray;
+            node.color = red;
             nodesSet.update(node);
             return;
         }
     }
     available[node.id] = true;
     if(taken[node.id]==true)
-        node.color = blue;
-    else
         node.color = green;
+    else
+        node.color = blue;
     nodesSet.update(node);
 });
 
@@ -98,12 +102,12 @@ network.on("click", function (params) {
     if (taken[selectedNode] == true) {
         taken[selectedNode] = false;
         if (available[selectedNode] == true)
-            nodes[selectedNode].color = green;
+            nodes[selectedNode].color = blue;
         else
-            nodes[selectedNode].color = gray;
+            nodes[selectedNode].color = red;
     } else {
         taken[selectedNode] = true;
-        nodes[selectedNode].color = blue;
+        nodes[selectedNode].color = green;
     }
 
     var connectedNodes = network.getConnectedNodes(selectedNode);
@@ -117,13 +121,13 @@ network.on("click", function (params) {
             if (edges[connEdges[j]].to == node
             && taken[edges[connEdges[j]].from] != true) {
                 available[node] = false;
-                nodes[node].color = gray;
+                nodes[node].color = red;
                 continue loop1;
             }
         }
 
         available[node] = true;
-        nodes[node].color = green;
+        nodes[node].color = blue;
     }
 
     var updateArray = [];
@@ -159,9 +163,32 @@ network.on("dragEnd", function (params) {
 network.on("zoom", function (params) {
     document.getElementById('eventSpan').innerHTML = '<h2>zoom event:</h2>' + JSON.stringify(params, null, 4);
 });
+network.on("select", function (params) {
+    console.log('select Event:', params);
+});
+network.on("selectNode", function (params) {
+    
+});
+network.on("selectEdge", function (params) {
+    console.log('selectEdge Event:', params);
+});
+network.on("deselectNode", function (params) {
+    console.log('deselectNode Event:', params);
+});
+network.on("deselectEdge", function (params) {
+    console.log('deselectEdge Event:', params);
+});
 network.on("hoverNode", function (params) {
-network.canvas.body.container.style.cursor = 'pointer';
+    network.canvas.body.container.style.cursor = 'pointer';
+    console.log('hoverNode Event:', params);
+});
+network.on("hoverEdge", function (params) {
+    console.log('hoverEdge Event:', params);
 });
 network.on("blurNode", function (params) {
-network.canvas.body.container.style.cursor = 'default';
+    network.canvas.body.container.style.cursor = 'default';
+    console.log('blurNode Event:', params);
+});
+network.on("blurEdge", function (params) {
+    console.log('blurEdge Event:', params);
 });

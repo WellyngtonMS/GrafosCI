@@ -116,7 +116,7 @@ h3 {
 }
 
 .infoBorder {
-  background-color: #d8def6;
+  background-color: #5C5C5C;
   margin: 1em;
   padding: 1em;
 }
@@ -124,7 +124,7 @@ h3 {
 ul {
   color: white;
   font-family: Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  padding-inline-start: 20px;
+  padding-inline-start: 30px;
 }
 
 .modal {
@@ -156,7 +156,8 @@ ul {
   }
    
   .modal__content {
-  min-width: 480px;
+  min-width: auto;
+  min-height: auto;
   position: relative;
   background-color: #35457e;
   padding: 2rem;

@@ -117,7 +117,7 @@ function changecien() {
             if (edges[connEdges[j]].to == node.id
                 && taken[edges[connEdges[j]].from] != true) {
                 available[node.id] = false;
-                node.color = gray;
+                node.color = red;
                 nodesSet.update(node);
                 return;
             }
@@ -125,11 +125,17 @@ function changecien() {
 
         available[node.id] = true;
         if(taken[node.id]==true)
-            node.color = blue;
-        else
             node.color = green;
+        else
+            node.color = blue;
 
         nodesSet.update(node);
     });
     document.getElementById("curso").innerHTML = "Ciência da Computação";
+	var options = {
+		position: { x: -40, y: -850 },
+		scale: 0.7,
+	  };
+
+	network.moveTo(options);
 }

@@ -47,7 +47,7 @@ function changecompt() {
 	    {level: 6, id: '5101003', label: 'Microcontroladores', title: '5101003 MICROCONTROLADORES', y: -1200},
 	    {level: 6, id: '1107128', label: 'Eng. de Software', title: '1107128 ENGENHARIA DE SOFTWARE', y: -1100},
 	    {level: 6, id: 'GDSCO0062', label: 'Redes I', title: 'GDSCO0062	REDES DE COMPUTADORES I', y: -1000},
-	    {level: 6, id: 'GDSCO0064', label: 'Sinas e Sistemas', title: 'GDSCO0064 SINAIS E SISTEMAS DINÂMICOS', y: -900},
+	    {level: 6, id: 'GDSCO0064', label: 'Sinais e Sistemas', title: 'GDSCO0064 SINAIS E SISTEMAS DINÂMICOS', y: -900},
 	    {level: 6, id: 'GDSCO0068', label: 'SO I', title: 'GDSCO0068 SISTEMAS OPERACIONAIS I', y: -800},
 	    {level: 6, id: '5102007', label: 'Pesquisa Operacional', title: '5102007 PESQUISA OPERACIONAL', y: -700},
 
